@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+.input-field{
+  width: 16vw;
+  height: 1.23vw;
+  padding: 0.5vw;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.1vw;
+  border-radius: 0.3vw 0 0 0.3vw;
+  border: 0.001vw solid #ccc5b7;
+  outline: none;
+  vertical-align: top;
+  display: inline-block;
+}
