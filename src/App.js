@@ -61,14 +61,15 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <Title value="To Do App"/>
         <form onSubmit={this.addToDo}>
           <Input
+            className="input-field"
             name="input"
             placeholder="I need to do..."
             inputRef={input => this.inputRef = input}/>
-          <Button text='add'/>
+          <Button className="submit-btn"/>
         </form>
         {this
           .state
