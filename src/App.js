@@ -6,6 +6,7 @@ import Input from './components/Input.js';
 import Todolist from './components/Todolist.js';
 
 window.id = 0;
+document.title = "Multitask"
 class App extends Component {
   constructor(props) {
     super(props)
@@ -23,7 +24,6 @@ class App extends Component {
     this.removeToDo = this
       .removeToDo
       .bind(this);
-
   }
 
   addToDo(e) {
@@ -62,7 +62,7 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <Title value="To Do App"/>
+        <Title value="Multitask"/>
         <form onSubmit={this.addToDo}>
           <Input
             className="input-field"
@@ -74,13 +74,20 @@ class App extends Component {
         {this
           .state
           .todo
-          .map((todo) => (
-            <div><Todolist
-              className="list-wrapper"
-              name={this.state.todo.text}
-              key={todo.id}
-              value={todo.text}/>
-              <input type="checkbox" onClick={(e) => this.removeToDo(e, todo.id)}/></div>
+          .map((todo, i) => (
+            <div key={todo
+              .text
+              .toString() + '-wrapper'}>
+              <Todolist
+                className="list-wrapper"
+                name={this.state.todo.text}
+                key={todo
+                .text
+                .toString() + '-div'}
+                value={todo.text}>
+                <input type="checkbox" key={i} onClick={(e) => this.removeToDo(e, todo.id)}/>
+              </Todolist>
+            </div>
           ))}
       </div>
 
