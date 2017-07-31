@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import './Button.css'
 
 export default class Button extends Component {
   render() {
-    const {onClick, text} = this.props
     return (
-      <button onClick={onClick}>{this.props.text}</button>
+      <button className={this.props.className} onClick={this.props.onClick}>
+        <i className="fa fa-check" aria-hidden="true"></i>
+      </button>
     )
   }
 }

@@ -1,0 +1,18 @@
+.submit-btn{
+  background-color: transparent;
+   border: none; 
+  outline: none;
+  cursor: pointer;
+  width: 3vw;
+  height: 2vw;
+  transition: 0.2s all;
+  font-size: 1.6vw;
+}
+
+.submit-btn:hover{
+  transform: scale(1.2);
+}
+
+.submit-btn:active{
+  color: green;
+}
