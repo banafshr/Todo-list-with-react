@@ -1,1 +1,10 @@
 
+body{
+  background-color: #f9f1e1;
+}
+
+.wrapper{
+  width: 27vw;
+  margin: auto;
+  text-align: center;
+}
