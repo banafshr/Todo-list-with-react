@@ -1,18 +1,22 @@
 .submit-btn{
-  background-color: transparent;
-   border: none; 
+  background-color: #17b5af;
+  border: none; 
   outline: none;
   cursor: pointer;
   width: 3vw;
-  height: 2vw;
+  height: 2.34vw;
   transition: 0.2s all;
   font-size: 1.6vw;
+  color: white;
+  border: 0.001vw solid #ccc5b7;
+  border-left: none;
+  border-radius: 0 0.3vw 0.3vw 0;
+  vertical-align: top;
+  display: inline-block;
 }
 
-.submit-btn:hover{
-  transform: scale(1.2);
-}
 
 .submit-btn:active{
-  color: green;
+  background-color: white;
+  color: black;
 }
