@@ -5,7 +5,7 @@ export default class Todolist extends Component {
   render() {
     const {children} = this.props
     return (
-      <div href="#" className={this.props.className} onClick={this.props.onClick}>
+      <div className={this.props.className}>
         {this.props.value}
         {children}
       </div>
