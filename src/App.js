@@ -43,7 +43,8 @@ class App extends Component {
   }
 
   removeToDo(e, i) {
-    if (e.target.type !== 'checkbox') 
+    debugger;
+    if (e.target.className !== 'done') 
       e.preventDefault();
     const remainder = this
       .state
@@ -56,41 +57,42 @@ class App extends Component {
       )
     //remove element from state
     this.setState({todo: remainder})
-
   }
 
   render() {
     return (
       <div className="wrapper">
         <Title value="Multitask"/>
-        <form onSubmit={this.addToDo}>
+        <form autocomplete="off" onSubmit={this.addToDo}>
           <Input
             className="input-field"
             name="input"
             placeholder="I need to do..."
             inputRef={input => this.inputRef = input}/>
           <Button className="submit-btn"/>
-        </form>
-        {this
-          .state
-          .todo
-          .map((todo, i) => (
-            <div key={todo
-              .text
-              .toString() + '-wrapper'}>
+        </form >
+        <div className="list-container" key={window.id}>
+          {this
+            .state
+            .todo
+            .map((todo, i) => (
+
               <Todolist
-                className="list-wrapper"
+                className="list-item"
                 name={this.state.todo.text}
                 key={todo
                 .text
-                .toString() + '-div'}
-                value={todo.text}>
-                <input type="checkbox" key={i} onClick={(e) => this.removeToDo(e, todo.id)}/>
-              </Todolist>
-            </div>
-          ))}
-      </div>
+                .toString() + '-div'}>
 
+                <span>{todo.text}</span>
+                <span className="done" key={i} onClick={(e) => this.removeToDo(e, todo.id)}>
+                  <i className="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </Todolist>
+            ))}
+        </div>
+
+      </div>
     );
   }
 }
